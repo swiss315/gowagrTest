@@ -13,7 +13,7 @@ export const JoinEcosystem = () => {
                 <Image
                     src={'/assets/svg/joinecosystem/background_ecosystem_mobile.svg'}
                     alt={'background_ecosystem '}
-                    className={'!relative w-full lg:hidden !h-[150rem] md:!h-full lg:!h-[30%]'}
+                    className={'!relative w-full lg:hidden !h-full md:!h-full lg:!h-[30%]'}
                     fill
                 />
                 <div
