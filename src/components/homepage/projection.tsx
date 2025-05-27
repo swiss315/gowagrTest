@@ -1,7 +1,32 @@
+"use client"
+
 import Image from "next/image";
-import PlayerCardSlider from "@/components/playercard";
+import {useEffect, useState} from "react";
+import {fetchPlayerShotsOnTarget} from "@/services/api/playeronTarget";
+import {PlayerPropItem} from "@/services/api/constant/type";
+import {PlayerCardSlider} from "@/components/playercard";
 
 export const Projection = () => {
+    const [shotsData, setShotsData] = useState<PlayerPropItem[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        async function loadData() {
+            try {
+                const response = await fetchPlayerShotsOnTarget(30);
+                console.log(response);
+                setShotsData(response.props);
+                setIsLoading(false);
+            } catch (err) {
+                setError("Failed to load data. Please try again later.");
+                setIsLoading(false);
+            }
+        }
+
+        loadData();
+    }, []);
+
     return (
         <>
             <section className={'relative flex flex-col gap-10 '}>
@@ -24,10 +49,10 @@ export const Projection = () => {
 
 
                 <div className={'flex flex-col gap-y-4 py-10'}>
-                    <PlayerCardSlider direction={"left"}/>
-                    <PlayerCardSlider direction={"right"}/>
-                    <PlayerCardSlider direction={"left"}/>
-                    <PlayerCardSlider direction={"right"}/>
+                    <PlayerCardSlider data={shotsData} direction={"left"}/>
+                    <PlayerCardSlider data={shotsData} direction={"right"}/>
+                    <PlayerCardSlider data={shotsData} direction={"left"}/>
+                    <PlayerCardSlider data={shotsData} direction={"right"}/>
 
                 </div>
 

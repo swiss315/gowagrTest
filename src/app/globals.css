@@ -175,38 +175,29 @@ li.slider-item {
 /* Infinite scrolling animation */
 .animate-marquee {
   display: flex; /* Ensures items are in a row */
-  animation: marquee 15s linear infinite;
-  width: 200%; /* Double the width to account for seamless looping */
+  animation: marquee 80s linear infinite;
+  width: 1500%; /* Double the width to account for seamless looping */
 }
 
 .animate-marquee-reverse {
-  animation: marquee-reverse 15s linear infinite;
+  animation: marquee-reverse 80s linear infinite;
   display: flex;
-  width: 200%; /* Double the container width to include duplicates */
+  width: 1500%;
 }
 
+/* Infinite scrolling animation */
+.animate-marquee-twitter {
+  display: flex; /* Ensures items are in a row */
+  animation: marquee 25s linear infinite;
+  width: 200%; /* Double the width to account for seamless looping */
+}
 
-/*.clip-slant {*/
-/*  clip-path: polygon(0 0, 120% 0, 185% 100%, 0 96%);*/
-/*}*/
+.animate-marquee-reverse-twitter {
+  animation: marquee-reverse 25s linear infinite;
+  display: flex;
+  width: 200%;
+}
 
-/*@media (min-width: 1024px) {*/
-/*  .custom-lg {*/
-/*    clip-path: polygon(0 0, 120% 0, 163% 100%, 0 92%);*/
-/*  }*/
-/*}*/
-
-/*@media (min-width: 1280px) {*/
-/*  .custom-xl {*/
-/*    clip-path: polygon(0 0, 120% 0, 140% 100%, 0 93.5%);*/
-/*  }*/
-/*}*/
-
-/*@media (min-width: 1440px) {*/
-/*  .custom-2xl {*/
-/*    clip-path: polygon(0 0, 120% 0, 120% 100%, 0 94.5%);*/
-/*  }*/
-/*}*/
 
 .clip-slant {
   clip-path: polygon(0 0, 120% 0, 230% 100%, 0 97%);
@@ -259,21 +250,3 @@ li.slider-item {
     clip-path: polygon(0 0, 120% 0, 120% 100%, 0 92.8%);
   }
 }
-
-/* Twitter feeds specific animation */
-@keyframes twitter-feed-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-250px * [number-of-items]));
-  }
-}
-
-.twitter-feed-scroller {
-  display: flex;
-  animation: twitter-feed-scroll 30s linear infinite;
-  width: calc(250px * [number-of-items] * 2);
-}
-
-

@@ -67,7 +67,7 @@ export const WordOnTheStreet = () => {
             textOverlay: false,
         }
     ]
-    const animationClass = 'left' === 'left' ? 'animate-marquee' : 'animate-marquee-reverse';
+    const animationClass = 'left' === 'left' ? 'animate-marquee-twitter' : 'animate-marquee-reverse-twitter';
 
     return (
         <>
