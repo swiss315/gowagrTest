@@ -19,6 +19,7 @@ export const Projection = () => {
                 setShotsData(response.props);
                 setIsLoading(false);
             } catch (err) {
+                console.log(err)
                 setError("Failed to load data. Please try again later.");
                 setIsLoading(false);
             }
