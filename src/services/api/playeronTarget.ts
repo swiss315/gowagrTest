@@ -19,7 +19,7 @@ export async function fetchPlayerShotsOnTarget(size: number = 30): Promise<Playe
         const data: PlayerShotsOnTargetResponse = await response.json();
         return data;
     } catch (error) {
-        console.error('Error fetching player shots on target data:', error);
+        console.error('Error fetching player shots on target datas:', error);
         throw error;
     }
 }
