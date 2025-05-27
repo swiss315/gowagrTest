@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import React, {useEffect, useState} from "react";
-import {fetchPlayerShotsOnTarget} from "@/services/api/playeronTarget";
 import {PlayerPropItem} from "@/services/api/constant/type";
 import {PlayerCardSlider} from "@/components/playercard";
+import {fetchPlayerShotsOnTarget} from "@/services/api/playeronTarget";
 
 export const Projection = () => {
     const [shotsData, setShotsData] = useState<PlayerPropItem[]>([]);
