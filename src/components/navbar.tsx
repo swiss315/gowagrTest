@@ -76,12 +76,12 @@ export const Navbar = () => {
                 {/* Dropdown Menu (Sliding Down) */}
                 </nav>
             <div
-                className={` z-10 top-0 left-0 w-full bg-red-950  text-black  transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"} `}>
-                <ul className={`py-2 w-11/12 mx-auto  shadow-lg rounded-lg `}>
-                    <li><Link href="/public">Home</Link></li>
-                    <li className={'text-secondary'}><Link href="/public">Partners</Link></li>
-                    <li><Link href="/public">How to play</Link></li>
-                    <li><Link href="/public">FAQs</Link></li>
+                className={` z-10 top-0 left-0 w-full bg-secondary  text-black text-sm font-[700] transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"} `}>
+                <ul className={`py-4 w-11/12 mx-auto  shadow-lg rounded-lg flex flex-col gap-y-4 `}>
+                    <li>Home</li>
+                    <li className={''}>Partners</li>
+                    <li>How to play</li>
+                    <li>FAQs</li>
                 </ul>
             </div>
 
