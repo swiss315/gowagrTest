@@ -9,6 +9,7 @@ export async function fetchPlayerShotsOnTarget(size: number = 30): Promise<Playe
             headers: {
                 'Content-Type': 'application/json',
             },
+            mode: 'no-cors'
         });
 
         if (!response.ok) {
