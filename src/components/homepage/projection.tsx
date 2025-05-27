@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {fetchPlayerShotsOnTarget} from "@/services/api/playeronTarget";
 import {PlayerPropItem} from "@/services/api/constant/type";
 import {PlayerCardSlider} from "@/components/playercard";
@@ -48,14 +48,17 @@ export const Projection = () => {
                 </div>
 
 
-                <div className={'flex flex-col gap-y-4 py-10'}>
-                    <PlayerCardSlider data={shotsData} direction={"left"}/>
-                    <PlayerCardSlider data={shotsData} direction={"right"}/>
-                    <PlayerCardSlider data={shotsData} direction={"left"}/>
-                    <PlayerCardSlider data={shotsData} direction={"right"}/>
+                {
+                    isLoading ? <div className="text-center py-4 text-white">Loading player data...</div> :
+                        <div className={'flex flex-col gap-y-4 py-10'}>
 
-                </div>
+                            <PlayerCardSlider data={shotsData} direction={"left"} error={error}/>
+                            <PlayerCardSlider data={shotsData} direction={"right"} error={error}/>
+                            <PlayerCardSlider data={shotsData} direction={"left"} error={error}/>
+                            <PlayerCardSlider data={shotsData} direction={"right"} error={error}/>
 
+                        </div>
+                }
 
             </section>
 

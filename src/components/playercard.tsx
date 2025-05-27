@@ -8,9 +8,14 @@ import React from "react";
 interface Props {
     direction: string;
     data: PlayerPropItem[];
+    error?: string | null;
 }
 
-export function PlayerCardSlider({direction, data}: Props) {
+export function PlayerCardSlider({direction, data, error}: Props) {
+    if (error) {
+        return <div className="text-center py-4 text-red-500">{error}</div>;
+    }
+
     if (!data || data.length === 0) {
         return <div className="text-center py-4 text-white">Loading player data...</div>;
     }
